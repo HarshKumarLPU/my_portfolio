@@ -1,6 +1,6 @@
 import { useRef, useEffect, useState } from 'react';
 import { motion, useMotionValue, useSpring, useAnimationFrame } from 'framer-motion';
-import { Download, Github, Linkedin } from 'lucide-react';
+import { Download, Github, Linkedin, Mail } from 'lucide-react';
 
 const TypingText = () => {
     const [loopNum, setLoopNum] = useState(0);
@@ -123,33 +123,42 @@ const Hero = () => {
                     <motion.a
                         href="/cv.pdf"
                         download
-                        className="group flex items-center gap-2 px-6 py-2 border border-white/10 rounded-full bg-white/5 backdrop-blur-sm transition-all hover:bg-white/10 hover:border-white/20 hover:scale-105 active:scale-95 text-[10px] font-bold tracking-[0.2em] uppercase"
+                        className="group flex items-center gap-3 px-8 py-3 border border-white/20 rounded-full bg-white/5 backdrop-blur-sm transition-all hover:bg-white/10 hover:border-white/40 hover:scale-105 active:scale-95 text-xs text-white/90 shadow-[0_0_15px_rgba(255,255,255,0.05)] font-bold tracking-[0.2em] uppercase"
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, delay: 1 }}
                     >
-                        <Download size={12} className="group-hover:text-accent transition-colors" />
+                        <Download size={18} className="group-hover:text-accent transition-colors" />
                         Download CV
                     </motion.a>
 
-                    <div className="flex items-center gap-6">
+                    <div className="flex items-center gap-4">
                         <motion.a
                             href="https://github.com/HarshKumarLPU" target="_blank" rel="noopener noreferrer"
-                            className="text-white/40 hover:text-white transition-all hover:scale-120"
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: 1 }}
-                            transition={{ delay: 1.2 }}
+                            className="p-2.5 border border-white/20 rounded-full bg-white/5 backdrop-blur-md text-white/90 hover:text-white hover:bg-white/10 hover:border-white/50 transition-all hover:scale-110 shadow-[0_0_15px_rgba(255,255,255,0.05)]"
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.8, delay: 1.2 }}
                         >
-                            <Github size={18} />
+                            <Github size={20} />
                         </motion.a>
                         <motion.a
                             href="https://www.linkedin.com/in/harshkumar-cse/" target="_blank" rel="noopener noreferrer"
-                            className="text-white/40 hover:text-white transition-all hover:scale-120"
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: 1 }}
-                            transition={{ delay: 1.4 }}
+                            className="p-2.5 border border-white/20 rounded-full bg-white/5 backdrop-blur-md text-white/90 hover:text-[#0a66c2] hover:bg-white/10 hover:border-[#0a66c2]/50 transition-all hover:scale-110 shadow-[0_0_15px_rgba(255,255,255,0.05)]"
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.8, delay: 1.4 }}
                         >
-                            <Linkedin size={18} />
+                            <Linkedin size={20} />
+                        </motion.a>
+                        <motion.a
+                            href="mailto:harshkumar212005@gmail.com"
+                            className="p-2.5 border border-white/20 rounded-full bg-white/5 backdrop-blur-md text-white/90 hover:text-[#ea4335] hover:bg-white/10 hover:border-[#ea4335]/50 transition-all hover:scale-110 shadow-[0_0_15px_rgba(255,255,255,0.05)]"
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.8, delay: 1.6 }}
+                        >
+                            <Mail size={20} />
                         </motion.a>
                     </div>
                 </div>

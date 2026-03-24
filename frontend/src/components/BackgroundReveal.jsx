@@ -29,12 +29,12 @@ const BackgroundReveal = () => {
     });
 
     return (
-        <div 
-            ref={containerRef} 
+        <div
+            ref={containerRef}
             className="fixed inset-0 pointer-events-none z-[-1] overflow-hidden bg-[#050510]"
         >
             {/* Layer 1: The vibrant colorful background */}
-            <div 
+            <div
                 className="absolute inset-0 opacity-60"
                 style={{
                     background: `
@@ -48,9 +48,9 @@ const BackgroundReveal = () => {
                     transform: 'translateZ(0)'
                 }}
             />
-            
+
             {/* Layer 2: The dark mask overlay */}
-            <div 
+            <div
                 className="absolute inset-0 bg-[#050510]"
                 style={{
                     WebkitMaskImage: `radial-gradient(400px circle at var(--x) var(--y), transparent 0%, black 100%)`,
