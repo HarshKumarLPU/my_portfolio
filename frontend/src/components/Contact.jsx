@@ -13,24 +13,42 @@ const Contact = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         setStatus({ submitting: true, success: false, error: null });
+
+        // IMPORTANT: Get your Access Key from https://web3forms.com/
+        const ACCESS_KEY = "5c67ca46-0ab1-4c3f-88ea-54ead4ada51e";
+
+        const submissionData = {
+            ...formData,
+            access_key: ACCESS_KEY,
+            subject: `New Contact Form Submission from ${formData.name}`,
+            from_name: "Portfolio Contact Form"
+        };
+
         try {
-            const response = await fetch('http://localhost:5000/api/contact', {
-                method: 'POST',
+            const response = await fetch("https://api.web3forms.com/submit", {
+                method: "POST",
                 headers: {
-                    'Content-Type': 'application/json',
+                    "Content-Type": "application/json",
+                    Accept: "application/json",
                 },
-                body: JSON.stringify(formData),
+                body: JSON.stringify(submissionData),
             });
 
-            if (!response.ok) {
-                throw new Error('Failed to send message');
-            }
+            const result = await response.json();
 
-            setStatus({ submitting: false, success: true, error: null });
-            setFormData({ name: '', email: '', message: '' });
+            if (result.success) {
+                setStatus({ submitting: false, success: true, error: null });
+                setFormData({ name: '', email: '', message: '' });
+            } else {
+                throw new Error(result.message || "Something went wrong");
+            }
         } catch (error) {
             console.error(error);
-            setStatus({ submitting: false, success: false, error: 'Failed to send message. Please try again later.' });
+            setStatus({ 
+                submitting: false, 
+                success: false, 
+                error: 'Failed to send message. Please ensure your Web3Forms Access Key is set correctly in Contact.jsx.' 
+            });
         }
     };
 

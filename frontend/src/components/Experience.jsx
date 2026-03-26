@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 
-const TimelineItem = ({ year, title, subtitle, description, isLast, delay, index }) => {
+const TimelineItem = ({ year, title, subtitle, description, cgpa, isLast, delay, index }) => {
     const isEven = index % 2 === 0;
 
     return (
@@ -25,7 +25,14 @@ const TimelineItem = ({ year, title, subtitle, description, isLast, delay, index
                         <h3 className="text-xl md:text-2xl font-bold text-white whitespace-nowrap overflow-hidden text-ellipsis mb-1">
                             {title}
                         </h3>
-                        {subtitle && <h4 className="text-gray-400 font-medium mb-3">{subtitle}</h4>}
+                        {subtitle && <h4 className="text-gray-400 font-medium mb-2">{subtitle}</h4>}
+                        {cgpa && (
+                            <div className="flex items-center gap-2 mb-3 md:justify-end lg:group-even:justify-start">
+                                <span className="px-3 py-1 bg-accent/10 border border-accent/20 rounded-full text-accent text-xs font-bold tracking-wider uppercase">
+                                    {cgpa}
+                                </span>
+                            </div>
+                        )}
                         {description && <p className="text-gray-500 text-sm leading-relaxed">{description}</p>}
                     </div>
                 </div>
@@ -46,19 +53,22 @@ const Experience = () => {
             year: "2020 - 2021",
             title: "Matriculation",
             subtitle: "Secondary Education",
-            description: "Built a strong foundation in science and mathematics."
+            description: "Built a strong foundation in science and mathematics.",
+            cgpa: "89%"
         },
         {
             year: "2021 - 2023",
             title: "Intermediate",
             subtitle: "Higher Secondary",
-            description: "Focused on Computer Science and core subjects like PCM."
+            description: "Focused on Computer Science and core subjects like PCM.",
+            cgpa: "81%"
         },
         {
             year: "2023 - Present",
             title: "Bachelor of Technology (B.Tech)",
             subtitle: "Undergraduate Degree",
-            description: "Pursuing B.Tech with a focus on software development and modern web technologies."
+            description: "Pursuing B.Tech with a focus on software development and modern web technologies.",
+            cgpa: "7.5"
         }
     ];
 
