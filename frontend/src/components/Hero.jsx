@@ -135,7 +135,7 @@ const Hero = () => {
                     <div className="flex items-center gap-4">
                         <motion.a
                             href="https://github.com/HarshKumarLPU" target="_blank" rel="noopener noreferrer"
-                            className="p-2.5 border border-white/20 rounded-full bg-white/5 backdrop-blur-md text-white/90 hover:text-white hover:bg-white/10 hover:border-white/50 transition-all hover:scale-110 shadow-[0_0_15px_rgba(255,255,255,0.05)]"
+                            className="p-2.5 border border-white/20 rounded-full bg-white/5 backdrop-blur-md text-white/90 hover:text-[#8250DF] hover:bg-white/10 hover:border-white/50 transition-all hover:scale-110 shadow-[0_0_15px_rgba(255,255,255,0.05)]"
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8, delay: 1.2 }}
